@@ -22,7 +22,6 @@ function Todos() {
             className="list-none text-left px-4 flex  gap-20 p-3"
           >
             <div className=" min-w-[200px] max-w-[200px] px-3 overflow-x-hidden">
-              {" "}
               {todo.id === getid ? (
                 <input
                   className=" focus:outline  outline-[2px] outline-[#646cff] mr-4 rounded-lg p-3 w-[180px]"
@@ -52,6 +51,7 @@ function Todos() {
                 <button
                   onClick={() => {
                     setId(todo.id);
+                    setUpdate(todo.text);
                   }}
                 >
                   Update
