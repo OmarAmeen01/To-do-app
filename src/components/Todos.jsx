@@ -14,14 +14,14 @@ function Todos() {
   }
 
   return (
-    <div className=" bg-slate-500 shadow-lg  rounded-lg ">
+    <div className=" bg-[#4a4a4a] shadow-lg  shadow-black rounded-lg ">
       {todos.map((todo) => {
         return (
           <li
             key={todo.id}
-            className="list-none text-left px-4 flex  gap-20 p-3"
+            className="list-none text-left px-4 flex  gap-20 p-3 justify-between border-b-2 border-black"
           >
-            <div className=" min-w-[200px] max-w-[200px] px-3 overflow-x-hidden">
+            <div className="">
               {todo.id === getid ? (
                 <input
                   className=" focus:outline  outline-[2px] outline-[#646cff] mr-4 rounded-lg p-3 w-[180px]"
@@ -30,13 +30,13 @@ function Todos() {
                   onChange={handleChange}
                 />
               ) : (
-                <span className="text-black mr-10 text-[25px] font-semibold font-sans ">
+                <span className="text-white  mr-10 text-[25px] font-semibold font-sans ">
                   {" "}
                   {todo.text}
                 </span>
               )}
             </div>
-            <div className="flex justify-around items-center border-3 border- min-w-52">
+            <div className="flex justify-around items-center border-3 gap-2 ">
               {todo.id === getid ? (
                 <button
                   onClick={() => {
@@ -49,17 +49,21 @@ function Todos() {
                 </button>
               ) : (
                 <button
+                  className="text-sm"
                   onClick={() => {
                     setId(todo.id);
                     setUpdate(todo.text);
                   }}
                 >
-                  Update
+                  Edit
                 </button>
               )}
 
-              <button onClick={() => dispatch(removeTodo(todo.id))}>
-                Remove
+              <button
+                onClick={() => dispatch(removeTodo(todo.id))}
+                className="text-sm"
+              >
+                Trash
               </button>
             </div>
           </li>

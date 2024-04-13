@@ -24,7 +24,8 @@ const todoSlice = createSlice({
                return todo.id=== action.payload.id
             })
             state.todos[index]=action.payload
-        }
+        },
+     
     }
 })
 export default todoSlice.reducer
